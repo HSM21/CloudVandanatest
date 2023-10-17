@@ -1,0 +1,49 @@
+<!--1. Create a basic calculator using HTML, CSS, and JavaScript with the functionality of add, 
+subtract, multiply and divide.-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<style>.calculator {
+  width: 300px;
+  margin: auto;
+  text-align: center;
+}
+.calculator input[type=text] {
+  width:90%;
+  padding: 10px;
+}
+.calculator button {
+  width: 70px;
+  height: 60px;
+  background-color:transparent;
+  border: none;
+  color: white;
+  text-align: center;
+ }
+</style>
+</head>
+ <body bgcolor="lightgrey">
+ <div class="calculator">
+ <table width="400" height="400" align="center" text="white">
+	<tr align="center"><td bgcolor="white" colspan="3"><input type="text" id="result" disabled></td><td bgcolor="#00cccc"><button onclick="clearResult()">AC</button></td></tr><br>
+	<tr align="center"><td bgcolor="black"><button bgcolor="black" onclick="addToResult('9')">9</button></td><td bgcolor="black"><button onclick="addToResult('8')">8</button></td><td bgcolor="black"><button onclick="addToResult('7')">7</button></td><td bgcolor="grey"><button  onclick="addToResult('+')">+</button></td></tr>
+<tr align="center"><td bgcolor="black"><button onclick="addToResult('6')">6</button></td><td bgcolor="black"><button onclick="addToResult('5')">5</button></td><td bgcolor="black"><button onclick="addToResult('4')">4</button></td><td bgcolor="grey"><button onclick="addToResult('-')">-</button></td></tr>
+<tr align="center"><td bgcolor="black"> <button onclick="addToResult('3')">3</button></td><td bgcolor="black"><button onclick="addToResult('2')">2</button></td><td bgcolor="black"><button onclick="addToResult('1')">1</button></td><td bgcolor="grey"><button onclick="addToResult('/')">/</button></td></tr>
+<tr align="center"><td bgcolor="black"><button onclick="addToResult('.')">.</button></td><td bgcolor="black"><button onclick="addToResult('0')">0</button></td><td bgcolor="black"><button onclick="calculate()">=</button></td><td bgcolor="grey"><button onclick="addToResult('*')">*</button></td></tr>
+ </table>
+ </div>
+ <script>let result = document.getElementById("result");
+function addToResult(value) {
+  result.value += value;
+}
+function clearResult() {
+  result.value = "";
+}
+function calculate() {
+  result.value = eval(result.value);
+}
+</script>
+ </body>
+</html>
+ 
